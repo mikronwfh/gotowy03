@@ -1,0 +1,8 @@
+{
+  "name": "BizNexus AI - The Ultimate Business Copilot",
+  "description": "An AI-powered business operating system for entrepreneurs to manage strategy, marketing, and growth with Gemini-powered intelligence.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
