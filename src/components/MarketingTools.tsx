@@ -29,7 +29,7 @@ const MarketingTools: React.FC<Props> = ({ profile }) => {
       setResult(output);
     } catch (error) {
       console.error(error);
-      setResult("Error generating content. Please check your API key.");
+      setResult("Error generating content. Please try again.");
     } finally {
       setLoading(false);
     }

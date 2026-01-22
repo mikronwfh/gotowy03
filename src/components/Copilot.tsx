@@ -39,7 +39,7 @@ const Copilot: React.FC<CopilotProps> = ({ profile }) => {
       setMessages(prev => [...prev, { role: 'model', content: response, timestamp: Date.now() }]);
     } catch (error) {
       console.error(error);
-      setMessages(prev => [...prev, { role: 'model', content: "I'm having trouble connecting right now. Please check your API key.", timestamp: Date.now() }]);
+      setMessages(prev => [...prev, { role: 'model', content: "I'm having trouble processing your request. Please try again.", timestamp: Date.now() }]);
     } finally {
       setIsTyping(false);
     }
@@ -54,7 +54,7 @@ const Copilot: React.FC<CopilotProps> = ({ profile }) => {
           </div>
           <div>
             <h3 className="font-bold">Business Copilot</h3>
-            <p className="text-xs text-indigo-100">AI Expert Advisor • Powered by Gemini Pro</p>
+            <p className="text-xs text-indigo-100">Expert Advisor • Business Insights</p>
           </div>
         </div>
       </div>

@@ -28,7 +28,7 @@ const StrategyTools: React.FC<StrategyToolsProps> = ({ profile }) => {
       setResult(output);
     } catch (error) {
       console.error(error);
-      setResult("Error generating strategy. Please check your API key.");
+      setResult("Error generating strategy. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -38,7 +38,7 @@ const StrategyTools: React.FC<StrategyToolsProps> = ({ profile }) => {
     <div className="space-y-8 animate-in slide-in-from-bottom-4 duration-500">
       <div className="max-w-2xl">
         <h2 className="text-3xl font-bold text-slate-900">Strategy Vault</h2>
-        <p className="text-slate-500 mt-2 text-lg">Use Gemini AI to build robust business foundations in seconds.</p>
+        <p className="text-slate-500 mt-2 text-lg">Build robust business foundations in seconds.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
