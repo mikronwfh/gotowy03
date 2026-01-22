@@ -1,20 +1,41 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# BizNexus AI - Business Intelligence Platform
 
-# Run and deploy your AI Studio app
+A modern business intelligence and strategy tool built with React and TypeScript.
 
-This contains everything you need to run your app locally.
+## Getting Started
 
-View your app in AI Studio: https://ai.studio/apps/drive/11zjWtowPddFIZK1mVoO3Kt6Xx4ne76wL
+### Prerequisites
+- Node.js 16+
+- npm or yarn
 
-## Run Locally
+### Installation
 
-**Prerequisites:**  Node.js
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+4. Build for production:
+   ```bash
+   npm run build
+   ```
 
+## Features
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- **Dashboard** - Business metrics and insights
+- **Strategy Vault** - SWOT analysis and business planning tools
+- **Marketing Hub** - Content generation for multiple formats
+- **Business Copilot** - AI-powered business advisor
+- **Profile Management** - Company information management
+
+## Tech Stack
+
+- React 18
+- TypeScript
+- Tailwind CSS
+- Vite
+- Recharts for data visualization

@@ -12,11 +12,3 @@ export interface ChatMessage {
   content: string;
   timestamp: number;
 }
-
-export type ToolCategory = 'strategy' | 'marketing' | 'sales' | 'ops' | 'copilot';
-
-export interface StrategyResult {
-  title: string;
-  content: string;
-  type: string;
-}

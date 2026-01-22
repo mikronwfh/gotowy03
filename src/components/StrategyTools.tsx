@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Search, Loader2, Save, Share2, Target, Users, LayoutTemplate, Briefcase } from 'lucide-react';
+import { Loader2, Target, Users, LayoutTemplate, Briefcase } from 'lucide-react';
 import { BusinessProfile } from '../types';
 import { generateStrategyTool } from '../services/geminiService';
 
@@ -63,21 +63,17 @@ const StrategyTools: React.FC<StrategyToolsProps> = ({ profile }) => {
       {loading ? (
         <div className="min-h-[400px] flex flex-col items-center justify-center bg-white rounded-3xl border border-slate-100 shadow-sm">
           <Loader2 className="w-12 h-12 text-indigo-600 animate-spin" />
-          <p className="mt-4 text-slate-500 font-medium italic">Analyzing markets and generating insights...</p>
+          <p className="mt-4 text-slate-500 font-medium">Generating analysis...</p>
         </div>
       ) : result ? (
         <div className="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden">
-          <div className="px-8 py-4 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
+          <div className="px-8 py-4 border-b border-slate-100 bg-slate-50/50">
             <h3 className="font-bold text-slate-900">{activeTool} Result</h3>
-            <div className="flex gap-2">
-              <button className="p-2 text-slate-500 hover:text-indigo-600 transition-colors"><Save className="w-5 h-5" /></button>
-              <button className="p-2 text-slate-500 hover:text-indigo-600 transition-colors"><Share2 className="w-5 h-5" /></button>
-            </div>
           </div>
-          <div className="p-10 prose prose-slate max-w-none">
-             <div className="whitespace-pre-wrap text-slate-700 leading-relaxed font-light">
+          <div className="p-10">
+             <div className="whitespace-pre-wrap text-slate-700 leading-relaxed">
                {result.split('\n').map((line, i) => (
-                 <p key={i} className={line.startsWith('#') ? 'text-xl font-bold text-indigo-900 mt-6' : 'mt-2'}>
+                 <p key={i} className={line.startsWith('#') ? 'text-xl font-bold text-indigo-900 mt-6 mb-2' : 'mt-2'}>
                    {line}
                  </p>
                ))}
@@ -85,12 +81,9 @@ const StrategyTools: React.FC<StrategyToolsProps> = ({ profile }) => {
           </div>
         </div>
       ) : (
-        <div className="min-h-[400px] flex flex-col items-center justify-center bg-slate-100/50 border-2 border-dashed border-slate-200 rounded-3xl">
-          <div className="p-4 bg-white rounded-full shadow-sm mb-4">
-            <Search className="w-8 h-8 text-slate-300" />
-          </div>
-          <h3 className="text-lg font-bold text-slate-900">No strategy generated yet</h3>
-          <p className="text-slate-500 mt-1">Select a framework above to begin your analysis.</p>
+        <div className="min-h-[400px] flex flex-col items-center justify-center bg-slate-50 border border-slate-100 rounded-3xl">
+          <h3 className="text-lg font-bold text-slate-900">No analysis yet</h3>
+          <p className="text-slate-500 mt-1">Select a framework to begin</p>
         </div>
       )}
     </div>

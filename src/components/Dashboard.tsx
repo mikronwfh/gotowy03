@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { TrendingUp, Users, DollarSign, Zap, ArrowRight, Star } from 'lucide-react';
+import { TrendingUp, Users, DollarSign, Zap, Star } from 'lucide-react';
 import { BusinessProfile } from '../types';
 import { 
   BarChart, 
@@ -9,9 +9,7 @@ import {
   YAxis, 
   CartesianGrid, 
   Tooltip, 
-  ResponsiveContainer, 
-  LineChart, 
-  Line 
+  ResponsiveContainer
 } from 'recharts';
 
 const data = [
@@ -63,15 +61,9 @@ const Dashboard: React.FC<DashboardProps> = ({ profile, setActiveTab }) => {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2 bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
-          <div className="flex items-center justify-between mb-8">
-            <h3 className="text-xl font-bold text-slate-900">Projected Market Growth</h3>
-            <select className="bg-slate-50 border border-slate-200 text-sm rounded-lg px-3 py-1 outline-none">
-              <option>Last 6 Months</option>
-              <option>Last Year</option>
-            </select>
-          </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
+          <h3 className="text-xl font-bold text-slate-900 mb-8">Projected Growth</h3>
           <div className="h-[300px] w-full">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={data}>
@@ -89,29 +81,21 @@ const Dashboard: React.FC<DashboardProps> = ({ profile, setActiveTab }) => {
         </div>
 
         <div className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm flex flex-col">
-          <h3 className="text-xl font-bold text-slate-900 mb-6">Recent AI Actions</h3>
-          <div className="space-y-6 flex-1">
-            {[
-              { title: 'Marketing Copy Generated', time: '2h ago', status: 'Success' },
-              { title: 'SWOT Analysis Updated', time: '5h ago', status: 'Done' },
-              { title: 'New Sales Script', time: '1d ago', status: 'Ready' },
-              { title: 'Market Trends Report', time: '2d ago', status: 'Archived' },
-            ].map((action, i) => (
-              <div key={i} className="flex items-center justify-between group cursor-pointer">
-                <div className="flex items-center gap-4">
-                  <div className="w-2 h-2 rounded-full bg-indigo-500" />
-                  <div>
-                    <p className="font-semibold text-slate-900 group-hover:text-indigo-600 transition-colors">{action.title}</p>
-                    <p className="text-sm text-slate-500">{action.time}</p>
-                  </div>
-                </div>
-                <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-indigo-600 group-hover:translate-x-1 transition-all" />
-              </div>
-            ))}
+          <h3 className="text-xl font-bold text-slate-900 mb-6">Quick Actions</h3>
+          <div className="space-y-4 flex-1">
+            <button onClick={() => setActiveTab('strategy')} className="w-full p-4 text-left rounded-xl border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50 transition-all">
+              <p className="font-semibold text-slate-900">Strategy Tools</p>
+              <p className="text-sm text-slate-500">SWOT, Canvas, PESTEL</p>
+            </button>
+            <button onClick={() => setActiveTab('marketing')} className="w-full p-4 text-left rounded-xl border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50 transition-all">
+              <p className="font-semibold text-slate-900">Marketing Hub</p>
+              <p className="text-sm text-slate-500">Generate copy</p>
+            </button>
+            <button onClick={() => setActiveTab('copilot')} className="w-full p-4 text-left rounded-xl border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50 transition-all">
+              <p className="font-semibold text-slate-900">Ask Copilot</p>
+              <p className="text-sm text-slate-500">AI advisor</p>
+            </button>
           </div>
-          <button className="mt-8 w-full py-3 text-indigo-600 font-semibold text-sm border border-indigo-100 rounded-xl hover:bg-indigo-50 transition-colors">
-            View All History
-          </button>
         </div>
       </div>
     </div>

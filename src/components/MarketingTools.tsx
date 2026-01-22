@@ -79,21 +79,21 @@ const MarketingTools: React.FC<Props> = ({ profile }) => {
       {loading ? (
         <div className="min-h-[300px] flex flex-col items-center justify-center bg-white rounded-3xl border border-slate-100">
           <Loader2 className="w-12 h-12 text-indigo-600 animate-spin" />
-          <p className="mt-4 text-slate-500 font-medium">Drafting high-conversion copy...</p>
+          <p className="mt-4 text-slate-500 font-medium">Generating content...</p>
         </div>
       ) : result && (
-        <div className="bg-slate-900 rounded-3xl p-8 text-slate-100 relative group">
+        <div className="bg-slate-50 rounded-3xl p-8 border border-slate-100">
           <div className="flex justify-between items-center mb-6">
-            <h3 className="font-bold text-indigo-400">AI Generated Copy</h3>
+            <h3 className="font-bold text-slate-900">Generated Copy</h3>
             <button 
               onClick={copyToClipboard}
-              className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-400 hover:text-white transition-colors"
+              className="flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-slate-700 transition-colors"
             >
               {copied ? <CheckCircle2 className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4" />}
-              {copied ? 'Copied' : 'Copy Text'}
+              {copied ? 'Copied' : 'Copy'}
             </button>
           </div>
-          <div className="whitespace-pre-wrap font-mono text-sm leading-relaxed text-slate-300">
+          <div className="whitespace-pre-wrap text-slate-700 leading-relaxed">
             {result}
           </div>
         </div>
